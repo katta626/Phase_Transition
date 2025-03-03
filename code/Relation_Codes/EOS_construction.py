@@ -101,10 +101,10 @@ def constructing_EOS(n, y):
 
             if cs_had[-1] < 1:
 
-                n_mid = np.linspace(n_t, n_t + d_n, y)
+                n_mid = np.linspace(n_t, n_t + d_n, 0)
 
-                p_mid = np.linspace(p_had[-1], p_had[-1], y)
-                mu_mid = np.linspace(mu_had[-1], mu_had[-1], y)
+                p_mid = np.linspace(p_had[-1], p_had[-1], 0)
+                mu_mid = np.linspace(mu_had[-1], mu_had[-1], 0)
                 e_mid = n_mid * mu_mid - p_mid
                 cs_mid = np.gradient(p_mid, e_mid)
 
@@ -131,10 +131,10 @@ def constructing_EOS(n, y):
 
                     # Add this condition:
                     if cs_quark[-1] < 1:
-                        p.append(np.concatenate((p_had, p_mid, p_quark)))
-                        mu.append(np.concatenate((mu_had, mu_mid, mu_quark)))
-                        e.append(np.concatenate((e_had, e_mid, e_quark)))
-                        cs.append(np.concatenate((cs_had, cs_mid, cs_quark)))
+                        p.append(np.concatenate((p_had, p_quark)))
+                        mu.append(np.concatenate((mu_had, mu_quark)))
+                        e.append(np.concatenate((e_had, e_quark)))
+                        cs.append(np.concatenate((cs_had, cs_quark)))
 
                         gam_h.append(g_h)
                         gam_q.append(g_q)
