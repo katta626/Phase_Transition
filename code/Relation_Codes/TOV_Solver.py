@@ -104,7 +104,7 @@ def generate_mr_curve(E_arr, P_arr):
     e_arr = Mev_fm3_to_GU * E_arr
     
     cen_densities = np.logspace(np.log10(min(e_arr) * 1.1), np.log10(max(e_arr) * 0.99), 80)
-    return tov_solver(cen_densities, p_arr, e_arr, min(p_arr) * 1.1, love=True)
+    return tov_solver(cen_densities, p_arr, e_arr, min(p_arr) * 1.1, love=False)
 
 # Generate M-R curve
 #radii, masses, compacts, love_nums = generate_mr_curve(E_arr, P_arr)
